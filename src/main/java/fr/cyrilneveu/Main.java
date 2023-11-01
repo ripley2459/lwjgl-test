@@ -1,6 +1,10 @@
 package fr.cyrilneveu;
 
-import fr.cyrilneveu.core.*;
+import fr.cyrilneveu.core.AppSettings;
+import fr.cyrilneveu.core.IAppLogic;
+import fr.cyrilneveu.core.Level;
+import fr.cyrilneveu.core.Window;
+import fr.cyrilneveu.core.render.Render;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 
@@ -90,6 +94,9 @@ public class Main implements IAppLogic {
 
     @Override
     public void end() {
+        render.end();
+        level.end();
+
         glfwFreeCallbacks(windowL); // Free the window callbacks and destroy the window
         glfwDestroyWindow(windowL);
         glfwTerminate(); // Terminate GLFW

@@ -1,5 +1,7 @@
 package fr.cyrilneveu.core;
 
+import fr.cyrilneveu.core.render.Render;
+
 public interface IAppLogic {
     void start(Window window, Level level, Render render);
 
